@@ -4,65 +4,30 @@
 <head>
 <style>
 html,
-
-body {background:#eee;}
-.xblanter-box{top:15px;right:385px;background:rgba(0, 0, 0, 0.5);border-radius:100px;padding:0px 12px;color:rgba(255, 255, 255, 0.84);position: fixed; z-index: 9;font: normal 18px FontAwesome;line-height: 30px;cursor: pointer;}
-.xblanter-box:hover{  opacity: 0.8;}
-.icon-box{background-color: rgba(66, 133, 244, 0.8);padding: 8px 13px;border-radius: 100%;color: rgba(255, 255, 255, 0.5);margin-right: 5px;}
-.icon-box:hover{color:white;background-color:rgba(66, 133, 244, 1);}
-.notif-info{background-color: rgba(245, 245, 245,0.5);border:1px solid #eee;padding: 5px 8px;margin-bottom: 10px;cursor: pointer;text-align:left;}
-  .notif-info:hover{opacity:0.8}.notif-info p {font-size:11px;color:#555;margin:0;margin-top:-5px;padding-left:40px;}
-#xblanterbox{background:#fff;border:1px solid rgba(204, 204, 204, 0.5);color:#333;font-size:14px;font-family: 'Open Sans', Helvetica, Arial, sans-serif;line-height:1.2em;top:-381px;right:306px;padding:20px 15px 15px 15px;position:fixed;width:300px;box-shadow: 0 2px 10px rgba(0,0,0,.2);z-index:10;transition: all 0.5s ease-out;-webkit-transition: all 0.5s ease-out;}
-#xblanterbox:before{content:"";width:0;height:0;position:absolute;top:-22px;right:81px;border:11px solid transparent;border-color:transparent transparent  rgba(204, 204, 204, 0.5);}
-#xblanterbox:after{content:"";width:0;height:0;position:absolute;top:-19px;right:82px;border:10px solid transparent;border-color: transparent transparent #fff;}
-.closebox{background:none;border:none;position:absolute;top:0px;right:0px;cursor:pointer;font-size:18px;font-weight:700;color:#888;}
-.closebox:focus{outline:none}
-.closebox:hover{color:red;opacity:0.5}
-.closebox:active{color:red;opacity:1}
-.count-box {width: 18px;height: 18px;line-height: 18px;text-align: center;background-color: rgba(231, 33, 0, 0.89);border-radius: 5px;color: #fff;display: inline-block;font-size: 12px;position: absolute;padding: 0 2px;  top: -5px;left: 22px;}
-#mydonasi{position:fixed;top:-500px;z-index:10;transition:0.4s all ease-in-out;}
-#myModal{position:fixed;top:-550px;z-index:10;transition:0.4s all ease-in-out;}.modal.in .modal-dialog{-webkit-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}.modal.fade .modal-dialog{-webkit-transition:-webkit-transform .3s ease-out;-moz-transition:-moz-transform .3s ease-out;-o-transition:-o-transform .3s ease-out;transition:transform .3s ease-out;-webkit-transform:translate(0,-25%);-ms-transform:translate(0,-25%);transform:translate(0,-25%)}@media screen and (max-width:480px){.modal-dialog{top:0!important;left:0!important}}@media screen and (max-width:320px){.modal-dialog{top:0!important;left:0!important}}.modal-dialog{position:fixed;top:50px;left:300px;width:auto;margin:10px;width:700px;max-width:100%}.modal-content{position:relative;background-color:#fff;background-clip:padding-box;border:1px solid #999;border:1px solid rgba(0,0,0,.2);outline:none;-webkit-box-shadow:0 3px 9px rgba(0,0,0,.5);box-shadow:0 3px 9px rgba(0,0,0,.5)}.modal-header{min-height:16.42857143px;padding:15px;border-bottom:1px solid #e5e5e5}.modal-header .close{margin-top:-2px}button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:transparent;border:0}.close{float:right;font-size:21px;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.modal-title{margin:0;font-size:150%!important;margin-bottom:-10px!important}.modal-body{position:relative;padding:20px;text-align:left;}.modal-footer{padding:19px 20px 20px;margin-top:15px;text-align:right;border-top:1px solid #e5e5e5}.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;}.btn-primary{color:#fff;background-color:#428bca;border-color:#357ebd}#overlay {background:rgba(0, 0, 0, 0.74);z-index:10;position:fixed;top:0;left:0;right:0;bottom:0;display:none;}
+<br/>
+#Button1,#Button2{margin-top:-30px;padding:0;text-align:center;float:left;border:1px solid #aaa;background:#ddd;cursor:pointer;width:32%;height:25px;line-height:25px}
+#Button2{margin-left:34%}
+#Button3{margin-top:-30px;margin-right:-2px;padding:0;text-align:center;float:right;border:1px solid #aaa;background:#ddd;cursor:pointer;width:32%;height:25px;line-height:25px}
+#Content1{display:block;width:100%;height:300px;padding:0;margin:40px auto;border:1px solid #aaa;text-align:left;background:#fff; overflow: auto;}
+#Content2,#Content3{display:none;width:100%;height:300px;padding:0;margin:40px auto;border:1px solid #aaa;text-align:left;background:#fff; overflow: auto;}
+#Content1 p,#Content2 p,#Content3 p{margin:10px}
 </style>
 </head>
-
-<div id='xblanterbox'>
-<div class='notif-info info' onclick='document.getElementById(&#39;myModal&#39;).style.top=&#39;80px&#39;;document.getElementById(&#39;overlay&#39;).style.display=&#39;block&#39;;'><i class='fa fa-info icon-box' style='padding: 10px 15px;'></i>Baca Notice Blog<p>Baca Notice Terbaru disini.</p></div>
-<div class='notif-info' onclick='document.getElementById(&#39;mydonasi&#39;).style.top=&#39;80px&#39;;document.getElementById(&#39;overlay&#39;).style.display=&#39;block&#39;;'><i class='fa fa-credit-card icon-box' style='padding: 10px;background-color:#00BCD4;'></i>Donasi Untuk Blog ini<p>Berikan Donasi seikhlasnya.</p></div>
-<div class='notif-info'><a href='#' onclick='window.open(&#39;http://translate.google.com/translate?u=&#39;+encodeURIComponent(location.href)+&#39;&langpair=id%7cen&hl=en&#39;); return false;' rel='nofollow' target='_blank'><span class='fa fa-try icon-box' style='padding: 10px 13px;background-color:#FB8C00;'></span>Translate to English</a><p>Translate This Page.</p></div>
-<input class='closebox' onclick='document.getElementById(&#39;xblanterbox&#39;).style.top=&#39;-381px&#39;;' title='Close this' type='button' value='×'/>
+<div id="Button1" onclick="document.getElementById('Content1').style.display='block';Content2.style.display='none';Content3.style.display='none';">Button 1</div>
+<div id="Button2" onclick="document.getElementById('Content1').style.display='none';Content2.style.display='block';Content3.style.display='none';">Button 2</div>
+<div id="Button3" onclick="document.getElementById('Content1').style.display='none';Content2.style.display='none';Content3.style.display='block';">Button 3</div>
+<div id="Content1">
+<p>
+Dunia Blanter
+</p>
 </div>
-<div id='overlay'></div>
-<div class='modal-dialog' id='myModal'>
-<div class='modal-content'>
-<div class='modal-header'>
-<h4 class='modal-title' id='myModalLabel'>
-Selamat Datang di Blog Dunia Blanter</h4>
+<div id="Content2">
+<p>
+Dunia Blanter Akan
+</p>
 </div>
-<div class='modal-body'>
-Gunakan Search form yang terletak pada kanan atas blog ini, Jika ingin berkomentar harap berkomentarlah dengan <b>RELEVAN!</b>.<br/>
-  Dan buat sobat yang mencari template blogger keren sobat bisa cari <a href='http://template.idblanter.com' target='_blank' title='Koleksi Template Keren.'>disini</a>.<br/>
-Dilarang <b>Copy Paste</b> Artikel disini secara keseluruhan, Jika ingin mengutip harap Cantumkan sumber LINK ke blog ini.
-</div>
-<div class='modal-footer'>
-<button class='btn btn-primary' onclick='document.getElementById(&#39;myModal&#39;).style.top=&#39;-500px&#39;;document.getElementById(&#39;overlay&#39;).style.display=&#39;none&#39;;' type='button'>Close</button>
-</div>
-</div>
-</div>
-<div class='modal-dialog' id='mydonasi'>
-<div class='modal-content'>
-<div class='modal-header'>
-<button aria-hidden='true' class='close' data-dismiss='modal' id='closex' onclick='document.getElementById(&#39;mydonasi&#39;).style.top=&#39;-500px&#39;;document.getElementById(&#39;overlay&#39;).style.display=&#39;none&#39;;' type='button'>&#215;</button>
-<h4 class='modal-title' id='myModalLabel'>
-DONATION</h4>
-</div>
-<div class='modal-body'>
-  Donasi yang kamu berikan akan saya gunakan untuk mengembangkan blog ini menjadi lebih baik.<br/>
-<b><i class='fa fa-credit-card'></i> BANK BCA</b>: 5475057811 a/n Sri Atmini<br/>
-<b><i class='fa fa-phone-square'></i> PULSA</b> : 0888-8905-441 (Smartfren)
-</div>
-</div>
-</div>
-<div class='xblanter-box' onclick='document.getElementById(&#39;xblanterbox&#39;).style.top=&#39;60px&#39;;document.getElementById(&#39;count-box&#39;).style.display=&#39;none&#39;;' style='transition: all 0.5s ease-out;-webkit-transition: all 0.5s ease-out;'>
-<i class='fa fa-info'></i>
-<div class='count-box' id='count-box'>3</div>
+<div id="Content3">
+<p>
+Dunia Blanter Akan Sukses.
+</p>
 </div>
