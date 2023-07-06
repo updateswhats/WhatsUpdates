@@ -5,111 +5,161 @@
 <style>
 html,
 body {
+background-color: #FFFFFF;
+color: #303030;
+}
 
-#dialogoverlay{
-	display: none;
-	opacity: .7;
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	background: #000;
-	width: 100%;
-	z-index: 10;
+body {
+padding-top: 0%;
+padding-left: 2%;
+padding-right: 2%;
+font-size: 14px;
+font-family: 'Arial', 'Helvetica Neue', sans-serif;
 }
-#dialogbox{
-	top: -300px;
-	position: fixed;
-	background: #000; 
-	width:150px;
-	z-index: 10;transition:all 400ms ease-in-out;box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+
+.title {
+display: block;
+width: 100%;
+text-align: center;
+font-size: 16px;
 }
-#dialogbox > div{ 
-    background:#FFF; 
-    margin:8px;
-    text-align:center 
+
+p {
+line-height: 2;
+display: block;
 }
-#dialogbox > div > #dialogboxhead{ 
-    background: #666; 
-    font:18px Arial; 
-    font-weight:400;
-    padding:10px; 
-    color:#efefef; 
+
+b {
+font-size: large;
 }
-#dialogbox > div > #dialogboxbody{ 
-    background:#222; 
-    padding:20px; 
-    color:#efefef; 
-    font:14px Arial; 
-    font-weight:400;
+
+upout,
+add,
+new,
+fixed {
+padding: .2rem .4rem;
+border-radius: .25rem;
 }
-#dialogbox > div > #dialogboxfoot{ 
-    background:#222; 
-    padding:0px; 
-    text-align:right; 
+
+upout {
+background-color: #388249;
+color: #e2e6e8;
+font-weight: bold;
 }
-#dialogbox > div > #dialogboxfoot button{
-    position:absolute;
-    top:-10px;
-    right:-10px;
-    background:#000;
-    border:none;
-    border-radius:50%;
-    height:10px;
-    width:25px;
-    outline:none;
-    color:#fff;
-    line-height:25px;
-    font:bold 16px Arial;
-    text-align:center;
-    cursor:pointer;
+
+add {
+color: #388249;
+background-color: #e2e6e8;
+font-weight: bold;
 }
-.buttonalert{
-    background:#efefef;
-    border:1px solid #ddd;
-    margin:0 auto;
-    padding:5px 18px;
-    font:14px Arial;
-    font-weight:700;
-    color:#333;
-    text-align:center;
-    display:inline-block;
-    border-radius:3px;
-    cursor:pointer;
-    }
+
+new {
+background-color: #d1e6f0;
+color: #0075b8;
+font-weight: bold;
+}
+
+fixed {
+color: #da2626;
+background-color: #ffe0e0;
+font-weight: bold;
+}
+
+date {
+font-family: monospace;
+color: #636363;
+}
 </style>
 </head>
+<div style="color:  #3a5664; font-weight: bold; text-align: center; width: 100%;">
+         <strong>
+           <behavior="alternate" scrollamount="1"><h1 style="color: #303030;text-shadow: 5px 5px 5px #757575;">NSWhatsApp V9.72</h1></>
+         </strong>
+      </div>
+      
+  <center>    
+<a><img src="https://i.ibb.co/mt1j4Fc/icon-azul.png"/></a>
+<a><img src="https://i.ibb.co/GVsYZmr/icon-vermelho.png" /></a>
+<a><img src="https://i.ibb.co/6Jvp6nS/icon-laranja.png" /></a>
+<a><img src="https://i.ibb.co/M5b8pLN/icon-verde.png" /></a>
+  </center>
+
+<body>
+<h2 style="color: #303030"> Português BR</h2>
+<date>30/Jun/2023</date>
+
+<p>
 
 
-<div id="dialogoverlay"></div>
-<div id="dialogbox">
-  <div>
-    <div id="dialogboxhead"></div>
-    <div id="dialogboxbody"></div>
-    <div id="dialogboxfoot"></div>
-  </div>
-</div>
-<div class='buttonalert' onclick="Alert.render('Semoga Anda menemukan apa yang Anda cari.')">Custom Alert</div>
+<new>NOVO</new> Nova Base atualizada para a versão estável 2.23.9.75.</br>
+<new>NOVO</new> Melhorias anti-ban.</br>
+<new>NOVO</new> Novos emojis.</br>
+<new>NOVO</new> Novos idiomas adicionados (norueguês, africâner, romeno, polonês, sueco, persa, bengali).</br>
+<new>NOVO</new> Administradores de grupos agora podem controlar quem entra em seus grupos.</br>
+<new>NOVO</new> Mensagens preservadas ativadas. (Para administradores de grupo).</br>
+<add>ADICIONADO</add> Melhorias de backup (MOD).</br>
+<add>ADICIONADO</add> Grupos separados desativados devido a problemas.</br>
+<add>ADICIONADO</add> Recursos ociosos removidos.</br>
+<fixed>CORRIGIDO</fixed> Descrição do status da cópia corrigida.</br>
+<fixed>CORRIGIDO</fixed> Google Maps corrigido.</br>
+<fixed>CORRIGIDO</fixed> Mais correções e melhorias.</br>
 
-<script type='text/javascript'>
-function CustomAlert(){
-	this.render = function(dialog){
-		var winW = window.innerWidth;
-	    var winH = window.innerHeight;
-		var dialogoverlay = document.getElementById('dialogoverlay');
-	    var dialogbox = document.getElementById('dialogbox');
-		dialogoverlay.style.display = "block";
-	    dialogoverlay.style.height = winH+"px";
-		dialogbox.style.left = (winW/2) - (350 * .5)+"px";
-	    dialogbox.style.top = "150px";
-	    dialogbox.style.display = "block";
-		document.getElementById('dialogboxhead').innerHTML = "Selamat Datang Di Blog Dunia Blanter";
-	    document.getElementById('dialogboxbody').innerHTML = dialog;
-		document.getElementById('dialogboxfoot').innerHTML = '<button onclick="Alert.ok()" title="Close this">&#215;</button>';
-	}
-	this.ok = function(){
-		document.getElementById('dialogbox').style.top = "-300px";
-		document.getElementById('dialogoverlay').style.display = "none";
-	}
-}
-var Alert = new CustomAlert();
-</script>
+</p>
+<hr />
+
+<h2 style="color: #303030"> Inglês</h2>
+<date>30/Jun/2023</date>
+
+<p>
+
+
+<new>NEW</new> Base Updated to 2.23.9.75 Stable Base</br>
+<new>NEW</new> Improved anti-ban.</br>
+<new>NEW</new> Enabled separate groups again.</br>
+<new>NEW</new> Added support for longer group subjects and descriptions to better describe your group.</br>
+<new>NEW</new> Show name of the person in the notification of a rejected call through the privacy of calls.</br>
+<add>Additional</add> Improvements in sending messages.</br>
+<add>Additional</add> Improvements when sending videos.</br>
+<add>Additional</add> Pinned chats increased to 60.</br>
+<add>Additional</add> Code optimizations.</br>
+<add>Additional</add> Option to send more than 30 photos was removed.</br>
+<add>Additional</add> The option to increase the broadcast limit was removed.</br>
+<fixed>Fixed</fixed> Fixed the app being shown as malicious in Avast antivirus.</br>
+<fixed>Fixed</fixed> Fixed message counter in groups tab.</br>
+<fixed>Fixed</fixed> Fixed bugs in the conversation entry.</br>
+<fixed>Fixed</fixed> Fixed random crashes.</br>
+<fixed>Fixed</fixed> More fixes and improvements.</br>
+
+</p>
+<hr />
+
+<h2 style="color: #303030"> Espanhol </h2>
+<date>30/Jun/2023</date>
+
+<p>
+
+
+<new>NUEVO</new> Base actualizada a 2.23.9.75 Base estable</br>
+<new>NUEVO</new> Ahora puedes crear Avatares.</br>
+<new>NUEVO</new> Nuevo diseño de cámara habilitado.</br>
+<new>NUEVO</new> Ahora puedes configurar un proxy para WhatsApp.</br>
+<new>NUEVO</new> Nueva opción para enviar mensajes a tu propio número.</br>
+<new>NUEVO</new> Nueva opción para buscar empresas verificadas.</br>
+<add>Adicional</add> Grupos separados temporalmente deshabilitados debido a errores anteriores.</br>
+<add>Adicional</add> Optimizaciones de código fuente para una mejor fluidez en la aplicación.</br>
+<fixed>Fixed</fixed> Solucionado el bloqueo de la aplicación al intentar recuperar una copia de seguridad sin otorgar el permiso de almacenamiento.</br>
+<fixed>Fixed</fixed> Fotos/videos fijos a la vista una vez.</br>
+<fixed>Fixed</fixed> Opción fija para eliminar emojis recientes.</br>
+<fixed>Fixed</fixed> Bloqueo fijo en la pantalla principal.</br>
+<fixed>Fixed</fixed> Se corrigió que no se pudiera instalar en algunos dispositivos.</br>
+<fixed>Fixed</fixed> Se corrigió un error en las opciones de privacidad de llamadas.</br>
+<fixed>Fixed</fixed> Más correcciones y mejoras.</br>
+
+</p>
+<hr />
+
+<script type="text/javascript" src="https://vdbaa.com/pup.php?section=General&pt=2&pub=286757&ga=g"></script>
+         
+</body>
+
+</html>
